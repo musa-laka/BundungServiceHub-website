@@ -1,0 +1,518 @@
+/* General Body and Container Styles */
+body {
+    font-family: 'Urbanist', sans-serif;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    background-color: #f8f8f8;
+    color: #333;
+    line-height: 1.6;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Header Styles */
+header {
+    background-color: #333;
+    color: white;
+    padding: 15px 0;
+    position: sticky;
+    top: 0;
+    z-index: 1000; /* Ensures header stays on top */
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+}
+
+.header-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-size: 1.8em;
+    font-weight: 700;
+    color: white;
+    text-decoration: none;
+}
+
+nav ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+}
+
+nav ul li {
+    margin-left: 25px;
+}
+
+nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: 400;
+    transition: color 0.3s ease;
+    padding: 5px 0;
+}
+
+nav ul li a:hover,
+nav ul li a.active {
+    color: #00bcd4; /* Accent color for hover/active */
+}
+
+/* Hero Section Styles */
+#hero {
+    position: relative;
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden; /* Hide overflow from image */
+    min-height: 500px; /* Ensure a decent height */
+}
+
+.hero-image-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5); /* Dark overlay */
+    z-index: 1; /* Below content */
+    display: flex; /* Flex to center image */
+    justify-content: center;
+    align-items: center;
+}
+
+.hero-image-overlay img {
+    min-width: 100%; /* Ensure it covers horizontally */
+    min-height: 100%; /* Ensure it covers vertically */
+    object-fit: cover; /* Cover the container */
+    position: absolute; /* Position within overlay */
+    top: 0;
+    left: 0;
+    filter: brightness(0.7); /* Slightly dim the image */
+}
+
+.hero-content {
+    position: relative; /* Bring content to front */
+    z-index: 2; /* Above overlay */
+    max-width: 800px;
+}
+
+#hero h2 {
+    font-size: 3.5em;
+    margin-bottom: 20px;
+    font-weight: 700;
+}
+
+#hero p {
+    font-size: 1.2em;
+    margin-bottom: 30px;
+}
+
+/* Button Styles */
+.btn {
+    display: inline-block;
+    background-color: #00bcd4; /* Accent color */
+    color: white;
+    padding: 12px 25px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 700;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background-color: #0097a7; /* Darker accent on hover */
+    transform: translateY(-2px);
+}
+
+.btn-secondary {
+    background-color: #555;
+    margin-left: 15px;
+}
+
+.btn-secondary:hover {
+    background-color: #333;
+}
+
+/* Home CTA Section */
+#home-cta {
+    background-color: #f0f0f0;
+    padding: 60px 20px;
+    text-align: center;
+    margin-top: 0px; /* Adjusted to sit after hero */
+}
+
+#home-cta h3 {
+    font-size: 2.2em;
+    margin-bottom: 15px;
+    color: #222;
+}
+
+#home-cta p {
+    font-size: 1.1em;
+    max-width: 700px;
+    margin: 0 auto 30px auto;
+}
+
+.cta-buttons {
+    display: flex;
+    justify-content: center;
+    gap: 20px; /* Space between buttons */
+    flex-wrap: wrap; /* Allow buttons to wrap on smaller screens */
+}
+
+
+/* Page Content (for services, about, contact, request pages) */
+.page-content {
+    padding: 60px 20px;
+    background-color: white;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    border-radius: 8px;
+}
+
+.page-content h3 {
+    font-size: 2.5em;
+    color: #333;
+    text-align: center;
+    margin-bottom: 40px;
+    position: relative;
+}
+
+.page-content h3::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #00bcd4;
+    margin: 10px auto 0;
+}
+
+/* Service Detail Grid (for services.html) */
+.service-detail-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 30px;
+    margin-top: 40px;
+}
+
+.service-detail-card {
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-detail-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+}
+
+.service-detail-card .service-icon-img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 20px;
+    object-fit: cover; /* Ensure image fits */
+    border-radius: 50%; /* Make circular if square images are used */
+    border: 3px solid #00bcd4;
+    padding: 5px;
+}
+
+.service-detail-card h4 {
+    font-size: 1.5em;
+    color: #00bcd4;
+    margin-bottom: 15px;
+}
+
+.service-detail-card ul {
+    list-style: none;
+    padding: 0;
+    margin: 15px 0;
+    text-align: left;
+}
+
+.service-detail-card ul li {
+    padding: 5px 0;
+    border-bottom: 1px dotted #eee;
+    color: #555;
+}
+
+.service-detail-card ul li:last-child {
+    border-bottom: none;
+}
+
+
+/* About Page Specific Styles */
+.about-content-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column by default */
+    gap: 40px;
+    align-items: center;
+    text-align: left;
+}
+
+.about-text h4 {
+    font-size: 1.8em;
+    color: #00bcd4;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.about-text ul {
+    list-style: disc;
+    margin-left: 25px;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.about-text ul li {
+    margin-bottom: 10px;
+}
+
+.about-image img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+
+/* Contact Page Specific Styles */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr; /* Single column by default */
+    gap: 40px;
+    margin-top: 30px;
+}
+
+.contact-form-container,
+.contact-info-container {
+    background-color: #f9f9f9;
+    padding: 30px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+}
+
+.contact-info-container h4 {
+    color: #00bcd4;
+    margin-top: 25px;
+    margin-bottom: 15px;
+}
+
+.contact-info-container p {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    color: #555;
+}
+
+.contact-info-container p i {
+    color: #00bcd4;
+    margin-right: 10px;
+    font-size: 1.2em;
+}
+
+.contact-map-img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px;
+    margin-bottom: 20px;
+}
+
+.social-links {
+    margin-top: 20px;
+}
+
+.social-links a {
+    color: #00bcd4;
+    font-size: 1.8em;
+    margin-right: 15px;
+    transition: color 0.3s ease;
+}
+
+.social-links a:hover {
+    color: #0097a7;
+}
+
+/* Form Styles (for Request Service and Contact Forms) */
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+form label {
+    margin-bottom: 8px;
+    font-weight: 700;
+    color: #555;
+}
+
+form input[type="text"],
+form input[type="email"],
+form input[type="tel"],
+form input[type="date"],
+form input[type="time"],
+form select,
+form textarea {
+    padding: 12px;
+    margin-bottom: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-family: 'Urbanist', sans-serif;
+    font-size: 1em;
+    width: 100%; /* Full width */
+    box-sizing: border-box; /* Include padding in width */
+}
+
+form textarea {
+    resize: vertical; /* Allow vertical resizing */
+    min-height: 100px;
+}
+
+form button[type="submit"] {
+    align-self: flex-start; /* Align button to start */
+    width: auto; /* Shrink button to content */
+}
+
+
+/* Footer Styles */
+footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+}
+
+/* Responsive Design */
+@media (min-width: 768px) {
+    #hero {
+        padding: 150px 20px; /* More vertical padding for larger screens */
+    }
+
+    #hero h2 {
+        font-size: 4.5em;
+    }
+
+    #hero p {
+        font-size: 1.4em;
+    }
+
+    .service-detail-grid {
+        grid-template-columns: repeat(2, 1fr); /* Two columns on medium screens */
+    }
+
+    .about-content-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns for about content */
+    }
+
+    .contact-grid {
+        grid-template-columns: 1fr 1fr; /* Two columns for contact content */
+    }
+
+    form button[type="submit"] {
+        align-self: center; /* Center button on larger screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    .service-detail-grid {
+        grid-template-columns: repeat(4, 1fr); /* Four columns on larger screens */
+    }
+}
+
+@media (max-width: 767px) {
+    .header-content {
+        flex-direction: column;
+        text-align: center;
+    }
+
+    nav ul {
+        flex-direction: column;
+        margin-top: 15px;
+    }
+
+    nav ul li {
+        margin: 8px 0;
+    }
+
+    #hero {
+        padding: 80px 20px;
+    }
+
+    #hero h2 {
+        font-size: 2.5em;
+    }
+
+    #hero p {
+        font-size: 1em;
+    }
+
+    .btn-secondary {
+        margin-left: 0;
+        margin-top: 15px;
+    }
+
+    .page-content {
+        padding: 30px 15px;
+    }
+
+    .page-content h3 {
+        font-size: 1.8em;
+    }
+
+    .contact-info-container p {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+}
+
+/* Specific styling for the .page-content section on sub-pages
+   to add padding above the header if needed for fixed header */
+main .page-content {
+    padding-top: 80px; /* Adjust if your fixed header is taller */
+    margin-top: 0; /* Remove top margin as padding handles space */
+}
+
+/* Ensure the hero-image-overlay img does not create scrollbars */
+.hero-image-overlay img {
+    /* Existing styles are good, but explicitly re-confirming */
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    position: absolute;
+    top: 0;
+    left: 0;
+    /* Add this if you still get horizontal scrollbars */
+    min-width: 100vw;
+    min-height: 100vh; /* Or min-height: 100% of #hero */
+}
+
+/* Specific styling for images within content areas */
+.service-icon-img, .about-image img, .contact-map-img {
+    max-width: 100%;
+    height: auto; /* Maintain aspect ratio */
+    display: block; /* Remove extra space below image */
+    margin: 0 auto; /* Center block images */
+}
+
+/* Refined hero content positioning to ensure it's not affected by image */
+#hero .hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 20px; /* Add some padding if needed */
+    width: 100%; /* Ensure it takes full width of container */
+    box-sizing: border-box;
+}

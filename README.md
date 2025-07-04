@@ -18,7 +18,7 @@ Contact & Request Forms:** Dedicated forms for inquiries and service requests (u
 # Technologies Used
 
 *HTML: For structuring the web content.
- *CS3: For styling and responsive design.
+ *CSS: For styling and responsive design.
 *JavaScript:** For interactive elements and dynamic functionalities (e.g., navigation toggles, form validation).
 
 # Getting Started
